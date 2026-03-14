@@ -14,7 +14,7 @@ const MODELS = [
 ];
 
 export function CommandInput() {
-  const { inputValue, setInputValue, sendMessage, isAgentThinking, selectedModel, setSelectedModel } =
+  const { inputValue, setInputValue, sendMessage, isAgentThinking, selectedModel, setSelectedModel, toolCount } =
     useDashboardStore();
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -108,6 +108,7 @@ export function CommandInput() {
 
       <p className="mt-1.5 text-center text-[9px] text-muted-foreground">
         GravityClaw has access to {72} MCP tools · All destructive actions require approval
+        GravityClaw has access to {toolCount} MCP tools · All destructive actions require approval
       </p>
     </div>
   );
