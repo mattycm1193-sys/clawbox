@@ -2,7 +2,6 @@ import { useEffect, useRef } from 'react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { useDashboardStore } from '@/store/dashboardStore';
 import { MessageBubble } from './MessageBubble';
-import { Skeleton } from '@/components/ui/skeleton';
 import { BrainCircuit } from 'lucide-react';
 
 function ThinkingIndicator() {

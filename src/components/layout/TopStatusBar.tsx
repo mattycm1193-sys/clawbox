@@ -9,6 +9,7 @@ import {
   ChevronRight,
   BrainCircuit,
   Zap,
+  Globe,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -44,7 +45,7 @@ function StatusPill({
 }
 
 export function TopStatusBar() {
-  const { systemStatus, selectedModel } = useDashboardStore();
+  const { systemStatus, selectedModel, wsConnected } = useDashboardStore();
 
   return (
     <div className="flex h-10 shrink-0 items-center justify-between border-b border-border bg-background/80 px-4 backdrop-blur-sm">
@@ -58,6 +59,8 @@ export function TopStatusBar() {
 
       {/* Center: System Status */}
       <div className="flex items-center gap-4">
+        <StatusPill label="Server" online={wsConnected} icon={Globe} />
+        <div className="h-3 w-px bg-border" />
         <StatusPill label="MCP Router" online={systemStatus.mcpRouter} icon={Zap} />
         <div className="h-3 w-px bg-border" />
         <StatusPill label="Supabase" online={systemStatus.supabase} icon={Database} />

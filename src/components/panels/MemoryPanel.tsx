@@ -1,6 +1,6 @@
 import type { MemoryChunk } from '@/types';
 import { Badge } from '@/components/ui/badge';
-import { cn, formatRelativeTime } from '@/lib/utils';
+import { formatRelativeTime } from '@/lib/utils';
 import { Brain, Cloud, HardDrive } from 'lucide-react';
 
 function MemoryItem({ memory }: { memory: MemoryChunk }) {

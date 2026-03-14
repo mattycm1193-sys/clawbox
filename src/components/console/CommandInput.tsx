@@ -58,7 +58,7 @@ export function CommandInput() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             {/* Model selector */}
-            <Select value={selectedModel} onValueChange={setSelectedModel}>
+            <Select value={selectedModel} onValueChange={(value) => { if (value) setSelectedModel(value); }}>
               <SelectTrigger
                 size="sm"
                 className="h-7 w-auto gap-1.5 border-border bg-transparent text-[11px] text-muted-foreground hover:bg-secondary hover:text-foreground"
