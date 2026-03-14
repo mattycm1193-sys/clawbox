@@ -107,7 +107,6 @@ export function CommandInput() {
       </div>
 
       <p className="mt-1.5 text-center text-[9px] text-muted-foreground">
-        GravityClaw has access to {72} MCP tools · All destructive actions require approval
         GravityClaw has access to {toolCount} MCP tools · All destructive actions require approval
       </p>
     </div>
