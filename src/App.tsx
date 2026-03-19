@@ -1,4 +1,8 @@
-import { SidebarProvider } from '@/components/ui/sidebar';
+import {
+  ResizablePanelGroup,
+  ResizablePanel,
+  ResizableHandle,
+} from '@/components/ui/resizable';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { Toaster } from '@/components/ui/sonner';
 import { AgentSidebar } from '@/components/layout/AgentSidebar';
@@ -10,22 +14,26 @@ function AgentApp() {
   useGravityClawWS();
 
   return (
-    <div className="flex h-dvh w-full overflow-hidden bg-background">
-      <AgentSidebar />
-      <main className="flex flex-1 overflow-hidden">
+    <ResizablePanelGroup direction="horizontal" className="h-dvh w-full">
+      <ResizablePanel defaultSize={20}>
+        <AgentSidebar />
+      </ResizablePanel>
+      <ResizableHandle withHandle />
+      <ResizablePanel defaultSize={55}>
         <CommandConsole />
+      </ResizablePanel>
+      <ResizableHandle withHandle />
+      <ResizablePanel defaultSize={25}>
         <RightPanel />
-      </main>
-    </div>
+      </ResizablePanel>
+    </ResizablePanelGroup>
   );
 }
 
 function App() {
   return (
     <TooltipProvider>
-      <SidebarProvider defaultOpen={true}>
-        <AgentApp />
-      </SidebarProvider>
+      <AgentApp />
       <Toaster
         theme="dark"
         position="bottom-right"
